@@ -14,7 +14,7 @@
         .nav-logo { max-width: 200px; height: auto; }
         .products-grid { display: grid; grid-template-columns: 1fr; gap: 40px; max-width: 450px; margin: 0 auto; }
         .product-card { text-align: left; }
-        .product-image { width: 100%; aspect-ratio: 1 / 1; background-color: #111; object-fit: cover; }
+        .product-image { width: 100%; aspect-ratio: 1 / 1; background-color: #111111; object-fit: cover; border: 1px solid #222; }
         .product-info { margin-top: 15px; display: flex; justify-content: space-between; font-size: 14px; font-weight: bold; letter-spacing: 0.5px; }
         .product-price { color: #888; }
         .buy-button { display: block; width: 100%; background-color: #ffffff; color: #000000; border: none; padding: 16px 0; font-size: 13px; font-weight: 900; letter-spacing: 1px; margin-top: 15px; cursor: pointer; text-decoration: none; text-align: center; }
@@ -37,11 +37,11 @@
 
         <div class="products-grid">
             <div class="product-card">
-                <!-- ФОТО ТВОГО ТОВАРУ (Вже працює) -->
-                <img class="product-image" src="https://ibb.co">
+                <!-- ПОРОЖНІЙ ЧОРНИЙ КВАДРАТ (Поки немає посилання на шмотку) -->
+                <div class="product-image"></div>
                 <div class="product-info">
-                    <span>VENTORI CLOTHING</span>
-                    <span class="product-price">1600 UAH</span>
+                    <span>VENTORI NEW ITEM</span>
+                    <span class="product-price">0000 UAH</span>
                 </div>
                 <a href="https://instagram.com" class="buy-button">ORDER VIA INSTAGRAM</a>
             </div>
@@ -49,9 +49,11 @@
     </div>
 
     <script>
-        // Автоматично дублюємо логотип у шапку, щоб тобі не вставляти два рази
-        const logoUrl = document.getElementById('dynamic-logo').getAttribute('src');
-        document.getElementById('nav-logo-img').setAttribute('src', logoUrl);
+        // Автоматично копіюємо лінк логотипу в шапку, щоб не вставляти двічі
+        window.addEventListener('DOMContentLoaded', () => {
+            const logoUrl = document.getElementById('dynamic-logo').getAttribute('src');
+            document.getElementById('nav-logo-img').setAttribute('src', logoUrl);
+        });
 
         // Анімація заставки
         setTimeout(() => {
