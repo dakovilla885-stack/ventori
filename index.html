@@ -22,21 +22,22 @@
 </head>
 <body>
 
-    <!-- 1. ЕКРАН ЗАВАНТАЖЕННЯ: Тут крутиться твоє каліграфічне лого Ventori -->
+    <!-- 1. ЕКРАН ЗАВАНТАЖЕННЯ: Логотип, який крутиться при вході -->
     <div id="splash-screen">
-        <img class="splash-logo" src="https://postimg.cc">
+        <!-- КРОК 1: Зітри текст великими літерами нижче всередині лапок і встав своє Пряме посилання на лого з ImgBB -->
+        <img class="splash-logo" id="dynamic-logo" src="https://ibb.co/ktyn1Gb">
     </div>
 
-    <!-- 2. САМ МАГАЗИН -->
+    <!-- 2. ГОЛОВНИЙ МАГАЗИН -->
     <div id="main-content">
         <header>
-            <!-- Логотип у шапці сайту -->
-            <img class="nav-logo" src="https://postimg.cc">
+            <!-- Логотип зверху над товарами підтягнеться сюди автоматично -->
+            <img class="nav-logo" id="nav-logo-img">
         </header>
 
         <div class="products-grid">
             <div class="product-card">
-                <!-- 3. ФОТО ТВОГО ТОВАРУ З IMGBB -->
+                <!-- ФОТО ТВОГО ТОВАРУ (Вже працює) -->
                 <img class="product-image" src="https://ibb.co">
                 <div class="product-info">
                     <span>VENTORI CLOTHING</span>
@@ -48,6 +49,11 @@
     </div>
 
     <script>
+        // Автоматично дублюємо логотип у шапку, щоб тобі не вставляти два рази
+        const logoUrl = document.getElementById('dynamic-logo').getAttribute('src');
+        document.getElementById('nav-logo-img').setAttribute('src', logoUrl);
+
+        // Анімація заставки
         setTimeout(() => {
             const splash = document.getElementById('splash-screen');
             const content = document.getElementById('main-content');
